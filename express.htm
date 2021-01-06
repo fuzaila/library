@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>package.json</h1>
+    <p>It stores all the metadata information about the js code and packages used so that further coders can easily refer to and install necessary modules and packages when working on the same code on another system.</p>
+    <h1>package-lock.json</h1>
+    <p>Solely used to lock the dependencies to a particular version number. ie, while transfering our files to another system, this package-lock.json file is transferred without any change.</p>
+    <h1>Routing</h1>
+    <p>Refers to determining how an application responds to a client request to a particular endpoint, which is a URI (path), and a specific HTTP request method (GET, POST, and so on). Methods for routing include get(), post(), put(), delete()... </p>
+    <p>Route definition structure - app.METHOD(PATH, HANDLER)<br>
+    <li>app - instance of express</li>
+    <li>METHOD - get(), post(), put(), delete()...</li>
+    <li>PATH - the path of the server</li>
+    <li>HANDLER - callback to be executed when the router is matched.</li>
+    </li>
+    </p>
+    <h1>Template Engines/Processor/Parser</h1>
+    <p>It is not easy to combine js files with design or html in server-side coding.
+        Template engine is a software to combine templates with data models to produce a result document. It makes it easy to design a HTML page.
+        <br>Examples are: ejs (Embedded JavaScript), React, Vash, pug(jade), Handlebars...
+    </p>
+    <p>Parsing - The act of reading or processing the HTML</p>
+    <p>Rendering - space in the document is allocated for the element and its content and that HTML content is displayed</p>
+    <p>Loading - not only has the DOM structure been built but all resources are made available for use</p>
+    <p>Use command npm install to automatically download all the packages used in a node project.</p>
+    <h1>MongoDB - Non-relational database</h1>
+    <p>
+        It is an open-source multi-platform, no-schema database for storing big data or distributed data. Each database are consisting of collections. Data in MongoDB are stored in collections. 
+        <li>Schema-less - Every collection can contain different kinds of objects. Every object is also called document, which is represented as JSON structure containing key-value pairs.</li>
+        <li>Collection is a set of documents. A way of storing schemaless data.</li>
+        <li>Document is a data structure storing data as key-value pairs.</li>
+        <li>MongoDB represents JSON documents in a binary encoded format called BiSon or Binary-JSON. It adds supported for data types like date and binary that are not supported in JSON. The documents have dynamic schema - that is the fields need not be of same type. It is less complex.</li>
+        <li>Multiple document transactions are not allowed in MongoDB, only atomic transactions are allowed.</li>
+        <li>MySQL DB - Mongo DB<br>
+            Table - Collection<br>
+            Row - Document<br> 
+        </li>
+        <li>It provides fragmentation, ie if the storage is not enough, it can be expanded to other nodes in the network, hence has big scalability. It supports many programming languages like python, ruby etc, and also allows server-side scripting.</li>
+
+    </p>
+</body>
+</html>
