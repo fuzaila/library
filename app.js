@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const port = process.env.PORT || 8000;
 
 const nav = [
     {link: "/dashboard", name: "My Library"},
@@ -40,6 +41,6 @@ app.get('/', function(req, res){
 });
 
 
-app.listen(8000);
+app.listen(port, ()=>{console.log("Server ready at " + port)});
 
 module.exports = books;
