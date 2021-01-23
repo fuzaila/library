@@ -34,6 +34,9 @@
       <nav class="collapse navbar-collapse" role="navigation">
         <ul class="nav navbar-nav">
           <li>
+            <a href="/admin"> Admin Panel </a>
+          </li>
+          <li>
             <a href="/signup"> Sign Up </a>
           </li>
         </ul>
@@ -107,10 +110,10 @@
                             <div class="main">
                               <div>
                                 <p class="sign">Login to my account</p><br>
-                                <form id="form1" >
-                                  <input class="un " type="email" placeholder="Email" required id="email" />
+                                <form id="form1" method="POST">
+                                  <input class="un " type="email" placeholder="Email" required id="email" name="email" />
       
-                                  <input class="pass" type="password" placeholder="Password" required id="pwd" /><span class="tooltiptext"></span><br>
+                                  <input class="pass" type="password" placeholder="Password" required id="pwd" name="password" /><span class="tooltiptext"></span><br>
                                   
                                  
                                   <p class="forgot" id="match" style="padding: 0px; margin-top: 0px; margin-bottom: 2em;"></p>
@@ -119,7 +122,7 @@
                                   <br>
                                   <p class="forgot"><br>
                                 <a href="<%=nav[2].link%>">Create a new account&nbsp;&nbsp;&nbsp;&nbsp;</a>
-                                <br>Use email = admin@gmail.com and password = Asd12345
+                                <br>
                                </p>	
                                 
                               </form>		
@@ -188,6 +191,6 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/js/validate_login.js"></script>
-    <script type="text/javascript" src="/js/users.js"></script>
+    <!-- <script type="text/javascript" src="/js/users.js"></script> -->
 	</body>
 </html>

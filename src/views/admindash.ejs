@@ -4,7 +4,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     
-    <title> <%= title %> </title>
+    <title> My Library </title>
     
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -25,22 +25,20 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
-        <li>
-          <a href="/dashboard/?user=<%=user%>"> My Library </a>
-        </li>
-        <li>
-          <a href="/books/?user=<%=user%>"> Books </a>
-        </li>
-        <li>
-          <a href="/authors/?user=<%=user%>"> Authors </a>
-        </li>
-        <li>
-          <a href="/"> Logout </a>
-        </li>
+        
+          <li>
+            <a href="/admin/addbook"> Books </a>
+          </li>
+          <li>
+            <a href="/admin/addauthor"> Authors </a>
+          </li>
+          <li>
+            <a href="/"> Logout </a>
+          </li>
+
       </ul>
       <ul class="nav navbar-right navbar-nav">
         <li class="dropdown">
@@ -60,7 +58,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7">
-        <h1><%=author.author %>
+        <h1>Library
           <p class="lead"></p>
         </h1>
       </div>
@@ -99,18 +97,17 @@
           
           
           <!--/stories-->
-
           <div class="row">    
             <br>
             <div class="col-md-2 col-sm-3 text-center">
-              <a class="story-title" href="#"><img alt="" src="/images/<%=author.image%>" style="width:100px;height:100px" class="img-circle"></a>
+              <a class="story-title" href="#"><img alt="" src="http://api.randomuser.me/portraits/thumb/men/58.jpg" style="width:100px;height:100px" class="img-circle"></a>
             </div>
             <div class="col-md-10 col-sm-9">
-              <h3><%=author.author%></h3>
+              <h3>Repurpose Content to Reach a Wider Audience</h3>
               <div class="row">
                 <div class="col-xs-9">
-                  <h4><span class="label label-default"><b>Famous for: </b><%=author.books%></span></h4><h4>
-                  <small style="font-family:courier,'new courier';" class="text-muted"><%=author.genre%>  • </small>
+                  <h4><span class="label label-default">97thfloor.com</span></h4><h4>
+                  <small style="font-family:courier,'new courier';" class="text-muted">2 hours ago  • <a href="#" class="text-muted">Read More</a></small>
                   </h4></div>
                 <div class="col-xs-3"></div>
               </div>
@@ -118,12 +115,12 @@
             </div>
           </div>
           <hr>
-
-        
+          
+         
           <!--/stories-->
           
           
-         
+
         
           
         </div>
@@ -170,13 +167,13 @@
         
       </div>
       <div class="col-sm-6">
-              
+               
       </div>
     </div>
   </div>
 </footer>
 	<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
 	</body>
 </html>

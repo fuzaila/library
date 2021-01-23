@@ -35,7 +35,9 @@
       </div>
       <nav class="collapse navbar-collapse" role="navigation">
         <ul class="nav navbar-nav">
-          
+          <li>
+            <a href="/admin"> Admin Panel </a>
+          </li>
           <li>
             <a href="/login"> Log In </a>
           </li>
@@ -111,12 +113,12 @@
                             <div class="main">
                               <div>
                                 <p class="sign">Create my account</p><br>
-                                <form id="form1">
-                                  <input class="un " type="text" placeholder="Name" required id="uname" />
+                                <form id="form1" method="POST">
+                                  <input class="un " type="text" placeholder="Name" required id="uname" name="name"/>
       
-                                  <input class="un " type="text" placeholder="Date of birth" onfocus="(this.type='date')" required id="dob" />
-                                  <input class="un " type="text" placeholder="Email" required id="email" />	
-                                  <input class="un " type="tel" placeholder="Phone number" required id="phone" />
+                                  <input class="un " type="text" placeholder="Date of birth" onfocus="(this.type='date')" required id="dob" name="dob" />
+                                  <input class="un " type="text" placeholder="Email" required id="email" name="email" />	
+                                  <input class="un " type="tel" placeholder="Phone number" required id="phone" name="phone" />
                                   <select id="country" name="country" class="un " style="text-align: center;" required>
                                     <option value="" selected hidden disabled>Choose your country</option>
                                     <option value="Afganistan">Afghanistan</option>
@@ -367,13 +369,13 @@
                                     <option value="Zimbabwe">Zimbabwe</option>
                                    </select>
 
-                                  <input class="pass" type="password" placeholder="Password" required id="pwd1" /><span class="tooltiptext"></span><br>
+                                  <input class="pass" type="password" placeholder="Password" required id="pwd1" name="password" /><span class="tooltiptext"></span><br>
                                   
                                   <input class="pass" type="password" placeholder="Confirm Password" required id="pwd2" style="margin-bottom: 4px;" /><br>
 
                                   <p class="forgot" id="match" style="padding: 0px; margin-top: 0px; margin-bottom: 2em;"></p>
       
-                                  <input type="submit" class="submit" value="Sign Up" id="signup" disabled onclick="checksignup(myprint)"/>
+                                  <input type="submit" class="submit" value="Sign Up" id="signup" disabled onclick="return confirm('Are you sure?')"/>
                                   <br>
                                   <p class="forgot"><br>
                                   <a href="<%=nav[3].link%>">I already have an account&nbsp;&nbsp;&nbsp;&nbsp;</a> </p>	

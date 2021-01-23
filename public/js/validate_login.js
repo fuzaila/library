@@ -1,6 +1,7 @@
 var username = document.getElementById('email');
 var pwd = document.getElementById('pwd');
 var button = document.getElementById('login-button');
+var form = document.getElementById('form1');
 var flag_e = 0;
 var flag_p = 0;
 
@@ -44,6 +45,7 @@ function enable(){
     if(flag_e == 1 && flag_p == 1)
             {
                 button.disabled = false;
+                form.setAttribute('action','/login/check');
             }        
 }
 

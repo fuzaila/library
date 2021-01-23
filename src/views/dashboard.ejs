@@ -8,12 +8,12 @@
     
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link href="css/styles.css" rel="stylesheet">
+		<link href="/css/styles.css" rel="stylesheet">
 	</head>
 	<body>
 <header class="navbar navbar-bright navbar-fixed-top" role="banner">
@@ -28,12 +28,16 @@
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
-        
-        <%for(i=1; i<nav.length; i++){%>
-          <li>
-            <a href="<%=nav[i].link%>"> <%=nav[i].name%> </a>
-          </li>
-          <%}%>
+
+        <li>
+          <a href="/books/?user=<%=user%>"> Books </a>
+        </li>
+        <li>
+          <a href="/authors/?user=<%=user%>"> Authors </a>
+        </li>
+        <li>
+          <a href="/"> Logout </a>
+        </li>
 
       </ul>
       <ul class="nav navbar-right navbar-nav">
@@ -54,7 +58,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7">
-        <h1>My Library
+        <h1>Welcome <%=user%>
           <p class="lead"></p>
         </h1>
       </div>
@@ -163,13 +167,13 @@
         
       </div>
       <div class="col-sm-6">
-          <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>      
+              
       </div>
     </div>
   </div>
 </footer>
 	<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
 	</body>
 </html>

@@ -4,7 +4,7 @@
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     
-    <title> Add New Book </title>
+    <title> Admin Panel </title>
     
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,7 +15,6 @@
 		<![endif]-->
     <link href="/css/styles.css" rel="stylesheet">
     <link href="/css/stylesheet.css" rel="stylesheet">
-    <script type="text/javascript" src="/js/validate_addbook.js"></script>
     
 	</head>
 	<body>
@@ -30,24 +29,17 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        
+        <a href="/" class="navbar-brand">Home</a>
       </div>
       <nav class="collapse navbar-collapse" role="navigation">
         <ul class="nav navbar-nav">
-          
+            <li>
+                <a href="/signup"> Log In </a>
+              </li>
           <li>
-            <a href="/admin/admindash"> Home </a>
+            <a href="/signup"> Sign Up </a>
           </li>
-          <li>
-            <a href="/admin/addauthor"> Authors </a>
-          </li>
-          <li>
-            <a href="/"> Logout </a>
-          </li>
-          
         </ul>
-        
-
         <ul class="nav navbar-right navbar-nav">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
@@ -67,7 +59,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7">
-        <h1>Add new book
+        <h1>Admin's account
           <p class="lead"></p>
         </h1>
       </div>
@@ -113,70 +105,37 @@
             <div class="container module">
               <div class="row inner">
                   <div class="col-md-12">
-                          <!-- <div class="col-md-3"></div> -->
+                          <div class="col-md-3"></div>
                           <div class="col-md-6">
                             <div class="main">
                               <div>
-                                <p class="sign" style="text-align: left; padding-left: 10%;">Enter book details</p><br>
-                                <form id="form1" method="GET" action="/admin/addb">
-                                  <input class="pass" type="text" placeholder="Book Title" required id="title" name="title"/>
+                                <p class="sign">Login to the admin panel</p><br>
+                                <form id="form1" >
+                                  <input class="un " type="email" placeholder="Email" required id="email" />
       
-                                  <input class="pass" type="text" placeholder="Book Author" required id="author" name="author"/><br>
-
-                                  <input class="pass" type="text" placeholder="Book Genre" required id="genre" name="genre" /><br> 
-                                                                 
+                                  <input class="pass" type="password" placeholder="Password" required id="pwd" /><span class="tooltiptext"></span><br>
+                                  
+                                 
+                                  <p class="forgot" id="match" style="padding: 0px; margin-top: 0px; margin-bottom: 2em;"></p>
       
-                                  <input type="submit" class="submit" value="Add book" id="login-button" onclick="return confirm('Are you sure?')"/>
+                                  <input type="submit" class="submit" value="Log In" id="login-button" disabled onclick="checklogin()"/>
                                   <br>
-                                                                  	
+                                  <p class="forgot"><br>
+                                
+                                <br>Use email = admin@gmail.com and password = Asd12345
+                               </p>	
+                                
+                              </form>		
                               </div>	
                               
                             </div>
                           </div>
-                          <div class="col-md-6">
-                            <p class="sign" style="text-align: left; padding-left: 0%;" >Upload Book Cover</p><br>
-                            <input id="pwd" type="file" name="image" required><br>
-                            <img height="auto" width="auto" id="cover">
-
-                            </form>	
-                          </div>
+                          <div class="col-md-3"></div>
                         </div>
                     </div>
 
           </div>
       
-          <div>
-            <br><hr style="margin-left: 5%; margin-right: 5%; border: 1px solid #111166; border-radius: 10px;"><br>
-            <p class="sign" style="text-align: left; padding-left: 4.5%; font-size: 25pt;"><u>BOOKS LIST</u></p><br>
-            <% for(i=0; i<books.length; i++){ %>
-
-              <div class="row">    
-                <br>
-                <div class="col-md-2 col-sm-3 text-center">
-                  <a class="story-title" href="#"><img alt="" src="/images/<%=books[i].image%>" style="width:100px;height:100px" class="img-circle"></a>
-                </div>
-                <div class="col-md-10 col-sm-9">
-                  <h3><%=books[i].title%></h3>
-                  <div class="row">
-                    <div class="col-xs-9">
-                      <h4 ><span class="label label-default"><%=books[i].author%></span></h4><h4>
-                      <form action="/admin/books/<%=books[i]._id%>">
-
-                        <small style="font-family:courier,'new courier';" class="text-muted"><%=books[i].genre%> • <input type="submit" value="Update book" id="login-button" style="margin-left: 0%;"/>
-                        
-                        </small>
-                      </form> 
-                      </h4></div>
-                    <div class="col-xs-3"></div> 
-                  </div>
-                </div>
-              </div>
-              
-    
-              <%}%>
-              <br>
-          </div>
-
           <!--/stories-->
      
         </div>
@@ -223,7 +182,7 @@
         
       </div>
       <div class="col-sm-6">
-         
+          <!-- <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>       -->
       </div>
     </div>
   </div>
@@ -231,11 +190,7 @@
 	<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/validate_addbook.js"></script>
-    <script type="text/javascript">  
-
-
-
-    </script>   
+    <script type="text/javascript" src="/js/validate_login.js"></script>
+    <script type="text/javascript" src="/js/admins.js"></script>
 	</body>
 </html>

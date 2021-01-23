@@ -39,6 +39,9 @@
             <a href="/admin/admindash"> Home </a>
           </li>
           <li>
+            <a href="/admin/addbook"> Books </a>
+          </li>
+          <li>
             <a href="/admin/addauthor"> Authors </a>
           </li>
           <li>
@@ -67,7 +70,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7">
-        <h1>Add new book
+        <h1>Update Book
           <p class="lead"></p>
         </h1>
       </div>
@@ -108,7 +111,33 @@
           <!--/stories-->
 
           <div class="row">    
-            <br>
+            <div>
+               
+                  <div class="row">    
+                    <div class="col-md-1"></div>
+                    <div class="col-md-1 col-sm-3 text-center">
+                      <a class="story-title" href="#"><img alt="" src="/images/<%=book.image%>" style="width:100px;height:100px" class="img-circle"></a>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-9 col-sm-9">
+                      <h3><%=book.title%></h3>
+                      <div class="row">
+                        <div class="col-xs-9">
+                          <h4 ><span class="label label-default"><%=book.author%></span></h4><h4>
+                            <form method="POST" action='/admin/deleteb/<%=book.id%>'>
+                                <small style="font-family:courier,'new courier';" class="text-muted"><%=book.genre%> • 
+                                <input type="submit" value="Delete Book" id="login-button" style="margin-left: 0%;" onclick="return confirm('Are you sure?')"/>
+                                </small>
+                            </form>
+                            <br>                            
+                          </h4></div>
+                        <div class="col-xs-3"></div> 
+                      </div>
+                    </div>
+                  </div>
+
+                  <br><hr style="margin-left: 5%; margin-right: 5%; border: 1px solid #111166; border-radius: 10px;"><br>
+              </div>
             
             <div class="container module">
               <div class="row inner">
@@ -117,16 +146,19 @@
                           <div class="col-md-6">
                             <div class="main">
                               <div>
-                                <p class="sign" style="text-align: left; padding-left: 10%;">Enter book details</p><br>
-                                <form id="form1" method="GET" action="/admin/addb">
-                                  <input class="pass" type="text" placeholder="Book Title" required id="title" name="title"/>
+                                <p class="sign" style="text-align: left; padding-left: 10%;">Update book details</p><br>
+                                <form id="form1" method="POST" action="/admin/updateb/<%=book._id%>">
+                                  <label for="title" class="sign" style="font-size: 15px; font-weight: 5px; padding-left: 10%;">Title</label><br> 
+                                  <input class="pass" type="text" value="<%=book.title%>" required id="title" name="title"/><br>
       
-                                  <input class="pass" type="text" placeholder="Book Author" required id="author" name="author"/><br>
+                                  <label for="author" class="sign" style="font-size: 15px; font-weight: 5px; padding-left: 10%;">Author</label><br> 
+                                  <input class="pass" type="text" required id="author" value="<%=book.author%>" name="author"/><br>
 
-                                  <input class="pass" type="text" placeholder="Book Genre" required id="genre" name="genre" /><br> 
+                                  <label for="genre" class="sign" style="font-size: 15px; font-weight: 5px; padding-left: 10%;">Genre</label><br>   
+                                  <input class="pass" type="text" value="<%=book.genre%>" required id="genre" name="genre" /><br> 
                                                                  
       
-                                  <input type="submit" class="submit" value="Add book" id="login-button" onclick="return confirm('Are you sure?')"/>
+                                  <!-- <input type="submit" class="submit" value="Update" id="login-button" /> -->
                                   <br>
                                                                   	
                               </div>	
@@ -134,48 +166,24 @@
                             </div>
                           </div>
                           <div class="col-md-6">
-                            <p class="sign" style="text-align: left; padding-left: 0%;" >Upload Book Cover</p><br>
-                            <input id="pwd" type="file" name="image" required><br>
-                            <img height="auto" width="auto" id="cover">
-
-                            </form>	
+                            <p class="sign" style="text-align: left; padding-left: 0%;" >Update Book Cover</p><br>
+                            <img height="250px" width="200px" id="cover" src="/images/<%=book.image%>"><br><br>
+                            <input id="pwd" type="file" name="image" value="/images/<%=book.image%>" required><br>
+                            <br>
+                            
                           </div>
+                          
                         </div>
+                        <input type="submit" class="submit" value="Update" id="login-button" style="margin-left: 7%;"/>
+                    </form>	
+                        <br><br><br>
+
+                        
                     </div>
 
-          </div>
+          </div> 
       
-          <div>
-            <br><hr style="margin-left: 5%; margin-right: 5%; border: 1px solid #111166; border-radius: 10px;"><br>
-            <p class="sign" style="text-align: left; padding-left: 4.5%; font-size: 25pt;"><u>BOOKS LIST</u></p><br>
-            <% for(i=0; i<books.length; i++){ %>
 
-              <div class="row">    
-                <br>
-                <div class="col-md-2 col-sm-3 text-center">
-                  <a class="story-title" href="#"><img alt="" src="/images/<%=books[i].image%>" style="width:100px;height:100px" class="img-circle"></a>
-                </div>
-                <div class="col-md-10 col-sm-9">
-                  <h3><%=books[i].title%></h3>
-                  <div class="row">
-                    <div class="col-xs-9">
-                      <h4 ><span class="label label-default"><%=books[i].author%></span></h4><h4>
-                      <form action="/admin/books/<%=books[i]._id%>">
-
-                        <small style="font-family:courier,'new courier';" class="text-muted"><%=books[i].genre%> • <input type="submit" value="Update book" id="login-button" style="margin-left: 0%;"/>
-                        
-                        </small>
-                      </form> 
-                      </h4></div>
-                    <div class="col-xs-3"></div> 
-                  </div>
-                </div>
-              </div>
-              
-    
-              <%}%>
-              <br>
-          </div>
 
           <!--/stories-->
      
@@ -223,7 +231,7 @@
         
       </div>
       <div class="col-sm-6">
-         
+          <!-- <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>       -->
       </div>
     </div>
   </div>

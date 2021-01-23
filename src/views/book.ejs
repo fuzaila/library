@@ -29,11 +29,18 @@
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
-        <%for(i=0; i<nav.length; i++){%>
         <li>
-          <a href="<%=nav[i].link%>"> <%=nav[i].name%> </a>
+          <a href="/dashboard/?user=<%=user%>"> My Library </a>
         </li>
-        <%}%>
+        <li>
+          <a href="/books/?user=<%=user%>"> Books </a>
+        </li>
+        <li>
+          <a href="/authors/?user=<%=user%>"> Authors </a>
+        </li>
+        <li>
+          <a href="/"> Logout </a>
+        </li>
       </ul>
       <ul class="nav navbar-right navbar-nav">
         <li class="dropdown">
@@ -96,7 +103,7 @@
           <div class="row">    
             <br>
             <div class="col-md-2 col-sm-3 text-center">
-              <a class="story-title" href="#"><img alt="" src="/images/<%=book.img%>" style="width:100px;height:100px" class="img-circle"></a>
+              <a class="story-title" href="#"><img alt="" src="/images/<%=book.image%>" style="width:100px;height:100px" class="img-circle"></a>
             </div>
             <div class="col-md-10 col-sm-9">
               <h3><%=book.title%></h3>
@@ -114,8 +121,6 @@
       
           <!--/stories-->
           
-          
-          <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>
         
           
         </div>
@@ -162,13 +167,13 @@
         
       </div>
       <div class="col-sm-6">
-          <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>      
+          
       </div>
     </div>
   </div>
 </footer>
 	<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
 	</body>
 </html>

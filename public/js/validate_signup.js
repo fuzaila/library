@@ -7,6 +7,7 @@ var match = document.getElementById('match');  //Passwords match or not text
 var text = document.getElementsByClassName('tooltiptext');  //Tooltip to show strength of text
 var button = document.getElementById('signup');
 var mydob = document.getElementById('dob');
+var form = document.getElementById('form1');
 
 var namex = /^([A-Z]{1})([A-Za-z ]+)$/;
 var email = /^([a-zA-Z0-9_\.\-]+)@([a-zA-Z0-9\-]+)\.([a-z]{2,3})(\.[a-z]{2,3})?$/
@@ -183,6 +184,7 @@ mydob.addEventListener('change', function(){
 function enable(){ // enable the signup button
     if (flag_e == 1 && flag_p1 == 1 && flag_p2 ==1 && flag_ph == 1 && flag_n == 1 && flag_dob == 1){
         signup.disabled = false;
+        form.setAttribute('action', '/signup/add');
     }
 }
 

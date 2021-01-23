@@ -1,35 +1,33 @@
 const express = require('express');
 const booksRouter = express.Router(); 
-// var r = require('C:\\Users\\user\\Desktop\\practice\\library app 2\\public\\js\\validate_addbook.js');
-// var $;
-// $ = require('jquery');
-// $('.tag').click(function(){
-//     return console.log('clicked');
-// });
-
-
-function router(nav, books){
+const Bookdata = require('../model/bookdata');
+  
+function router(nav){
 
     booksRouter.get('/', function(req,res){
-        res.render("books",
-        {
-            nav, title: 'Books', books  
+        var user = req.query.user;
+        Bookdata.find()
+        .then(function(books){
+            res.render("books",
+            {
+                nav, title: 'Books', books, user  
+            });
         });
+        
     });
-    
-    booksRouter.get('/addbook', function(req,res){
-        res.render("addbook",
-        {
-            nav, title: 'Books', books  
-        });
-    });
+
 
     booksRouter.get('/:id', function(req, res){
         const id = req.params.id; 
-        res.render("book",
-        {
-            nav, title: 'Books', book: books[id]
-        });
+        var user = req.query.user;
+        Bookdata.findOne({_id: id})
+        .then(function(book){
+            res.render("book",
+            {
+                nav, title: 'Books', book, user
+            });
+        })
+        
     });   
     
     return booksRouter;
